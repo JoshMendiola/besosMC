@@ -2,12 +2,11 @@ package me.philosophywithjosh.besosMC.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.EntityEffect;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.Wolf;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
-import me.philosophywithjosh.besosMC.listeners.*;
+import me.philosophywithjosh.besosMC.listeners.playerListener;
 
 import me.philosophywithjosh.besosMC.Main;
 
@@ -39,8 +38,14 @@ public class crouchListener implements Listener
 		if(playerListener.isAroundLover(kisser) && kisser.isSneaking() && playerListener.getReciever().isSneaking())
 		{
 			Player reciever = playerListener.getReciever();
-            reciever.playEffect(EntityEffect.LOVE_HEARTS);
-            kisser.playEffect(EntityEffect.LOVE_HEARTS);
+			kisser.sendMessage("Mwah :)");
+			reciever.sendMessage("Mwah :)");
+			Wolf o = kisser.getWorld().spawn(kisser.getLocation(), Wolf.class);
+			Wolf k = reciever.getWorld().spawn(reciever.getLocation(), Wolf.class);
+            o.playEffect(EntityEffect.WOLF_HEARTS);
+            k.playEffect(EntityEffect.WOLF_HEARTS);
+            o.remove();
+            k.remove();
 		}
 	}
 	

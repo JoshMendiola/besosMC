@@ -1,5 +1,5 @@
 name: besosMC
 author: PhilosophyWithJosh
 version: 1.0
-main: me.PhilosophyWithJosh.besosMC.Main
+main: me.philosophywithjosh.besosMC.Main
 description: adds a kissing function in minecraft, just crouch next to another crouching player :)
